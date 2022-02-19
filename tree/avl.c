@@ -161,7 +161,7 @@ void inordertraversal(struct Node  *t)
 	if(t!=NULL)
 	{
 		inordertraversal(t->left);
-		printf("%s ",sprintf(t->key),100);
+		printf("%s ",printf(t->key),100);
 		inordertraversal(t->right);
 	}
 }
