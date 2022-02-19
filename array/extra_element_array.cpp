@@ -22,3 +22,18 @@ int main(){
     }
     return 0;
 }
+/*#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    vector<int> arr{25,36,91,88,54,12};
+    vector<int> arr1{91,36,12,25,40,54,88};
+    int x=arr1[arr1.size()-1];
+    for(int i=0;i<arr.size();i++)
+    {
+        x=x^arr[i]^arr1[i];
+    }
+     cout<<x;
+
+    return 0;
+}*/
