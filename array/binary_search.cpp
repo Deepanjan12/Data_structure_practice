@@ -3,25 +3,28 @@
 using namespace std;
 int binary_search(int x,vector<int>arr)
 {
-    int low = 0 ,high=arr.size()-1;
-    int mid=(low+high)/2;
-    if(low<=high)
-    {
-        if(arr[mid]==x)
-        {
-            return mid;
-        }
-        else if(arr[mid]>x)
-        {
-            high=mid-1;
-        }
-        else
-        {
-            low=mid+1;
-        }
+    int first = 0;
+  int last = arr.size() - 1;
+
+  while (first <= last)
+   {
+   	int middle = (first+last)/2;
+
+    if (arr[middle] < x)
+      first = middle + 1;
+    else if (arr[middle] == x) {
+      printf("%d found at location %d.\n", x, middle+1);
+      break;
     }
-     return mid;
+    else
+      last = middle - 1;
+  }
+  if (first > last)
+    printf("Not found! %d isn't present in the list.\n", x);
+
+  return 0;
 }
+
 
 int main(){
     vector<int> arr;
@@ -37,7 +40,7 @@ int main(){
     cout<<"Enter the element to be searched: ";
     int x,pos;
     cin>>x;
-    pos= binary_search( x, arr);
-    cout<<"The position of the element is "<<pos+1;
+    binary_search(x,arr);
+
     return 0;
 }
