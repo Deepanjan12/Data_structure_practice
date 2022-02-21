@@ -1,3 +1,4 @@
+//for sorted array this kind of jum search is used
 #include<iostream>
 #include<vector>
 #include<math.h>
