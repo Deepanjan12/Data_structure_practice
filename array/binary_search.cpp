@@ -1,46 +1,42 @@
-#include<iostream>
-#include<vector>
-using namespace std;
-int binary_search(int x,vector<int>arr)
+#include<stdio.h>
+int bsearch(int *a,int low,int high,int key)
 {
-    int first = 0;
-  int last = arr.size() - 1;
-
-  while (first <= last)
-   {
-   	int middle = (first+last)/2;
-
-    if (arr[middle] < x)
-      first = middle + 1;
-    else if (arr[middle] == x) {
-      printf("%d found at location %d.\n", x, middle+1);
-      break;
-    }
-    else
-      last = middle - 1;
-  }
-  if (first > last)
-    printf("Not found! %d isn't present in the list.\n", x);
-
-  return 0;
+        if(low<=high)
+        {
+              int mid=(low+high)/2;
+             if(a[mid]==key)
+             {
+                 return mid;
+             }
+             else if(a[mid]<key)
+             {
+                 bsearch(a,mid+1,high,key);
+             }
+             else
+             {
+                 bsearch(a,low,mid-1,key);
+             }
+        }
+        else
+        {
+             return -1;
+        }
 }
 
 
 int main(){
-    vector<int> arr;
+    int  arr[100];
     int n;
-    cout<<"Enter the limit of the array: ";
-    cin>>n;
+    printf("Enter the limit of the array: ");
+    scanf("%d",&n);
     for (int i = 0; i < n; i++)
     {
-        int var;
-        cin>>var;
-        arr.push_back(var);
+        scanf("%d",&arr[i]);
     }
-    cout<<"Enter the element to be searched: ";
+    printf("Enter the element to be searched: ");
     int x,pos;
-    cin>>x;
-    binary_search(x,arr);
+    scanf("%d",&x);
+    bsearch(arr,0,n-1,x);
 
     return 0;
 }
