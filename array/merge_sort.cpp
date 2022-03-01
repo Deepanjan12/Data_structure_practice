@@ -1,5 +1,6 @@
 //Merge Sort
 #include<stdio.h>
+#include<stdlib.h>
 int  merge(int arr[],int lb,int mid, int ub)
 {
     int i=lb,j=mid+1,k=lb,b[100];
@@ -56,7 +57,7 @@ int main()
     int n;
     printf("Enter the limit of the array: ");
     scanf("%d",&n);
-    int  arr[100];
+    int  *arr=(int *)malloc(n*sizeof(int));
     for (int i = 0; i < n; i++)
     {
         scanf("%d",&arr[i]);

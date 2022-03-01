@@ -1,5 +1,6 @@
 //bubble sort
 #include<stdio.h>
+#include<stdlib.h>
 int swap(int *a, int *b)
 {
     int temp = *a;
@@ -8,10 +9,10 @@ int swap(int *a, int *b)
 }
 void sort(int arr[], int n)
 {
-    int i, j, temp;
-    for(i=0;i<n;i++)
+    int i, j;
+    for(i=0;i<n-1;i++)
     {
-        for(j=i+1;j<n;j++)
+        for(j=0;j<n-i-1;j++)
         {
             if(arr[j]>arr[j+1])
             {
@@ -22,9 +23,10 @@ void sort(int arr[], int n)
 }
 int main()
 {
-    int i,n,arr[100];
+    int i,n,*arr;
     printf("Enter the limit of the array: ");
     scanf("%d",&n);
+    arr=(int *)malloc(n*sizeof(int));
     printf("\nEnter the elements of the array: ");
     for(i=0;i<n;i++)
     {

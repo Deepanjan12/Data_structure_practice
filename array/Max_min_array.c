@@ -29,9 +29,10 @@ int min(int arr[], int n)
 }
 int main()
 {
-    int i, n, arr[100], ch;
+    int i, n, *arr, ch;
     printf("Enter the number of elements in the array: \n");
     scanf("%d", &n);
+    arr = (int *)malloc(n * sizeof(int));
     printf("Enter the elements of the array: \n");
     for (i = 0; i < n; i++)
     {
@@ -70,3 +71,4 @@ int main()
 
     return 0;
 }
+//program written by Deepanjan Sur;
