@@ -1,5 +1,6 @@
 //Quick Sort
 #include <stdio.h>
+#include<stdlib.h>
 int swap(int *a, int *b)
 {
     int temp = *a;
@@ -41,10 +42,10 @@ void quick_sort(int arr[], int lb, int ub)
 }
 int main()
 {
-    int i, n;
-    int arr[100];
+    int i, n,*arr;
     printf("Enter the limit of the array: ");
     scanf("%d", &n);
+    arr=(int *)malloc(n*sizeof(int));
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &arr[i]);
